@@ -7,11 +7,15 @@
     In class-based inheritance derived object COPIES all the state
 
   PROPERTY RESOLUTION LOOKUP:
-    JS engines go up the prototype chain.
+    JS engines go up the prototype chain
     Starting with the object property was invoked on
     Going through all its prototypes
     Ending with {} or Object.prototype
 
     Stops when a property is found during lookup
     If nothing found throws TypeError if property is a function, returns undefined otherwise
+  
+  __proto__ vs .prototype:
+    same idea. never use former, always latter. former is used by js engine for property lookup and 
+    prototype chain traversals
 */
