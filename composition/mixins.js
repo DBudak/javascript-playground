@@ -38,9 +38,8 @@ const Channel = {
 
 const MessageApp = Object.assign(
   Message.prototype,
-  PhoneCall.prototype,
-  Contact.prototype,
+  new PhoneCall('dad', 'me', '8089099879'),
+  new Contact('dbudak', 'jslogo.jpg'),
   Channel
 );
-const Slack = new MessageApp('dad', 'me')
-console.log(JSON.stringify(Slack))
+console.log(JSON.stringify(MessageApp))
