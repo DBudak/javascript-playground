@@ -21,4 +21,14 @@ const Money = (currency, amount) =>
 
   //static methods
   Money.sum = (m1,m2) => m1.add(m2);
-  Money.precisionRound = (number, precision) => Math.round(number * Math.pow(10, precision)) / Math.pow(10, precision);
+  const precisionRound = (number, precision) => Math.round(number * Math.pow(10, precision)) / Math.pow(10, precision);
+
+const fee = Money('$', 100);
+console.log(fee.amount, fee.currency); // 100 $
+console.log(fee.toString()); //$100
+console.log(fee * 3); //300
+console.log(fee + fee); //200
+console.log(Object.isFrozen(fee)) // true
+console.log(Object.isSealed(fee))
+// fee.amount = 55 // Error because of freeze
+// fee.bankrupt = true // Error because of seal
